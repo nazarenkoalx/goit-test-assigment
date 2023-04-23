@@ -1,4 +1,4 @@
-import { useState } from "react";
+// import { useState } from "react";
 import {
   TopImage,
   StyledTweetListItem,
@@ -15,11 +15,12 @@ import backgroundimg from "../../images/backgroundTweet.png";
 import line from "../../images/line.png";
 import circle from "../../images/ellipse@2x.png";
 
-function TweetListItem({ avatar, name, tweets, followers }) {
-  const [isFollowing, setIsFollowing] = useState(false);
+function TweetListItem({ avatar, name, tweets, followers, following }) {
+  // const [isFollowing, setIsFollowing] = useState(false);
   // const [isLoading, setIsLoading] = useState(false);
 
   const follows = followers > 0 ? followers : "no";
+  const tweetsNumb = tweets > 0 ? tweets : "no";
 
   // updateUsersData(id, data);
 
@@ -31,12 +32,10 @@ function TweetListItem({ avatar, name, tweets, followers }) {
       <AvatarCircle src={circle} alt="circle" />
       <AvatarImage src={avatar} width="30px" alt={name} />
       <TextWrapper>
-        <TextParagraph>{tweets} tweets</TextParagraph>
+        <TextParagraph>{tweetsNumb} tweets</TextParagraph>
         <TextParagraph>{follows} followers</TextParagraph>
       </TextWrapper>
-      <FollowBtn type="button">
-        {isFollowing ? "Following" : "Follow"}
-      </FollowBtn>
+      <FollowBtn type="button">{following ? "Following" : "Follow"}</FollowBtn>
     </StyledTweetListItem>
   );
 }

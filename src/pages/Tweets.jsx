@@ -1,20 +1,20 @@
 import { useEffect, useState } from "react";
-import { getUserInfo, updateUsersData } from "../services/serviceAPI";
+import { getUserInfo } from "../services/serviceAPI";
 import { Loader } from "../components/Loading/Loading";
 import TweetList from "../components/TweetList/TweetList";
+import { LoadMoreBtn } from "../components/TweetList/TweetList.styled";
 
 function Tweets() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const [userArr, setUserArr] = useState(
-    () => JSON.parse(window.localStorage.getItem("userArr")) ?? []
-  );
+  const [userArr, setUserArr] = useState([]);
+  const [tweetsPerPage, setTweetsPerPage] = useState(3);
 
   useEffect(() => {
     setUserArr([]);
     setError("");
     setLoading(true);
-    getUserInfo()
+    getUserInfo(tweetsPerPage)
       .then((userInfo) => {
         if (userInfo.length === 0) {
           return alert("There are no tweets(");
@@ -24,11 +24,11 @@ function Tweets() {
       })
       .catch((error) => setError(error))
       .finally(() => setLoading(false));
-  }, []);
+  }, [tweetsPerPage]);
 
-  useEffect(() => {
-    window.localStorage.setItem("userArr", JSON.stringify(userArr));
-  }, [userArr]);
+  const onLoadMoreClick = () => {
+    setTweetsPerPage((prevTweetsPerPage) => prevTweetsPerPage + 3);
+  };
 
   return (
     <main>
@@ -38,6 +38,7 @@ function Tweets() {
         <>
           <h2>Tweet list</h2>
           <TweetList usersInfo={userArr} />
+          <LoadMoreBtn onClick={onLoadMoreClick}>Load More</LoadMoreBtn>
         </>
       )}
     </main>

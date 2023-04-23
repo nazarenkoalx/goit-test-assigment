@@ -5,7 +5,7 @@ function TweetList({ usersInfo }) {
   return (
     <StyledTweetList>
       {usersInfo.map((userInfo) => {
-        const { avatar, id, name, tweets, followers } = userInfo;
+        const { avatar, id, name, tweets, followers, following } = userInfo;
         return (
           <TweetListItem
             key={id}
@@ -13,6 +13,7 @@ function TweetList({ usersInfo }) {
             name={name}
             tweets={tweets}
             followers={followers}
+            following={following}
           />
         );
       })}
