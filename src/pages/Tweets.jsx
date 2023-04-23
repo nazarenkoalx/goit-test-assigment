@@ -38,8 +38,10 @@ function Tweets() {
         <>
           <h2>Tweet list</h2>
           <TweetList usersInfo={userArr} />
-          <LoadMoreBtn onClick={onLoadMoreClick}>Load More</LoadMoreBtn>
         </>
+      )}
+      {userArr.length > 0 && userArr.length === tweetsPerPage && (
+        <LoadMoreBtn onClick={onLoadMoreClick}>Load More</LoadMoreBtn>
       )}
     </main>
   );
