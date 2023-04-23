@@ -1,22 +1,22 @@
 import TweetListItem from "../TweetListItem/TweetListItem";
+import { StyledTweetList } from "./TweetList.styled";
 
 function TweetList({ usersInfo }) {
-  console.log(usersInfo);
   return (
-    <ul>
+    <StyledTweetList>
       {usersInfo.map((userInfo) => {
-        const { avatar, id, user, tweets, followers } = userInfo;
+        const { avatar, id, name, tweets, followers } = userInfo;
         return (
           <TweetListItem
             key={id}
             avatar={avatar}
-            name={user}
+            name={name}
             tweets={tweets}
             followers={followers}
           />
         );
       })}
-    </ul>
+    </StyledTweetList>
   );
 }
 

@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
-import { getUserInfo } from "../services/serviceAPI";
+import { getUserInfo, updateUsersData } from "../services/serviceAPI";
 import { Loader } from "../components/Loading/Loading";
 import TweetList from "../components/TweetList/TweetList";
 
 function Tweets() {
-  const [userArr, setUserArr] = useState([]);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [userArr, setUserArr] = useState(
+    () => JSON.parse(window.localStorage.getItem("userArr")) ?? []
+  );
 
   useEffect(() => {
     setUserArr([]);
@@ -23,6 +25,11 @@ function Tweets() {
       .catch((error) => setError(error))
       .finally(() => setLoading(false));
   }, []);
+
+  useEffect(() => {
+    window.localStorage.setItem("userArr", JSON.stringify(userArr));
+  }, [userArr]);
+
   return (
     <main>
       {loading && <Loader />}
