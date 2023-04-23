@@ -20,9 +20,25 @@ function TweetListItem({ avatar, name, tweets, followers, following }) {
   // const [isLoading, setIsLoading] = useState(false);
 
   const follows = followers > 0 ? followers : "no";
-  const tweetsNumb = tweets > 0 ? tweets : "no";
 
-  // updateUsersData(id, data);
+  let splitTweets;
+
+  if (tweets === 0) {
+    splitTweets = "no";
+  }
+  if (tweets > 10000) {
+    const firstPart = tweets.toString().slice(0, 2);
+    const secondPart = tweets.toString().slice(2, 5);
+    splitTweets = firstPart + "," + secondPart;
+  }
+
+  if (tweets > 100000) {
+    const firstPart = tweets.toString().slice(0, 3);
+    const secondPart = tweets.toString().slice(3, 6);
+    splitTweets = firstPart + "," + secondPart;
+  }
+
+  console.log(splitTweets);
 
   return (
     <StyledTweetListItem>
@@ -32,10 +48,12 @@ function TweetListItem({ avatar, name, tweets, followers, following }) {
       <AvatarCircle src={circle} alt="circle" />
       <AvatarImage src={avatar} width="30px" alt={name} />
       <TextWrapper>
-        <TextParagraph>{tweetsNumb} tweets</TextParagraph>
+        <TextParagraph>{splitTweets} tweets</TextParagraph>
         <TextParagraph>{follows} followers</TextParagraph>
       </TextWrapper>
-      <FollowBtn type="button">{following ? "Following" : "Follow"}</FollowBtn>
+      <FollowBtn type="button" following={following}>
+        {following ? "Following" : "Follow"}
+      </FollowBtn>
     </StyledTweetListItem>
   );
 }

@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { getUserInfo } from "../services/serviceAPI";
-import { Loader } from "../components/Loading/Loading";
 import TweetList from "../components/TweetList/TweetList";
 import { LoadMoreBtn } from "../components/TweetList/TweetList.styled";
+import { Loader } from "../components/Loading/Loading";
 
 function Tweets() {
   const [error, setError] = useState("");
