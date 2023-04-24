@@ -95,4 +95,7 @@ export const FollowBtn = styled.button`
   :hover {
     background-color: #5cd3a8;
   }
+  &.active {
+    background-color: #5cd3a8;
+  }
 `;

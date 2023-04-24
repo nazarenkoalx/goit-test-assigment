@@ -1,4 +1,4 @@
-// import { useState } from "react";
+import { useState } from "react";
 import {
   TopImage,
   StyledTweetListItem,
@@ -14,17 +14,28 @@ import goitLogo from "../../images/goitLogo.svg";
 import backgroundimg from "../../images/backgroundTweet.png";
 import line from "../../images/line.png";
 import circle from "../../images/ellipse@2x.png";
+// import { css } from "@emotion/react";
 
-function TweetListItem({ avatar, name, tweets, followers, following }) {
-  // const [isFollowing, setIsFollowing] = useState(false);
-  // const [isLoading, setIsLoading] = useState(false);
+function TweetListItem({
+  id,
+  avatar,
+  name,
+  tweets,
+  followers,
+  setUserFollow,
+  localFollowing,
+}) {
+  const [isFollowing, setIsFollowing] = useState(false);
+  const [newFollowers, setNewFollowers] = useState(followers);
 
-  const follows = followers > 0 ? followers : "no";
+  const follows = newFollowers > 0 ? newFollowers : "no";
 
   let splitTweets;
-
   if (tweets === 0) {
     splitTweets = "no";
+  }
+  if (tweets > 0) {
+    splitTweets = tweets;
   }
   if (tweets > 10000) {
     const firstPart = tweets.toString().slice(0, 2);
@@ -38,7 +49,16 @@ function TweetListItem({ avatar, name, tweets, followers, following }) {
     splitTweets = firstPart + "," + secondPart;
   }
 
-  console.log(splitTweets);
+  const onFollowBtnClick = () => {
+    if (!isFollowing) {
+      setIsFollowing(true);
+      setNewFollowers((prevFollowers) => prevFollowers + 1);
+    } else {
+      setIsFollowing(false);
+      setNewFollowers((prevFollowers) => prevFollowers - 1);
+    }
+    localFollowing(id, newFollowers);
+  };
 
   return (
     <StyledTweetListItem>
@@ -51,8 +71,12 @@ function TweetListItem({ avatar, name, tweets, followers, following }) {
         <TextParagraph>{splitTweets} tweets</TextParagraph>
         <TextParagraph>{follows} followers</TextParagraph>
       </TextWrapper>
-      <FollowBtn type="button" following={following}>
-        {following ? "Following" : "Follow"}
+      <FollowBtn
+        type="button"
+        className={isFollowing ? "active" : "disabled"}
+        onClick={() => onFollowBtnClick()}
+      >
+        {isFollowing ? "Following" : "Follow"}
       </FollowBtn>
     </StyledTweetListItem>
   );
