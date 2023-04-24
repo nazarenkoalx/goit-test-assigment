@@ -15,15 +15,7 @@ import backgroundimg from "../../images/backgroundTweet.png";
 import line from "../../images/line.png";
 import circle from "../../images/ellipse@2x.png";
 
-function TweetListItem({
-  id,
-  avatar,
-  name,
-  tweets,
-  followers,
-  following,
-  setUserArr,
-}) {
+function TweetListItem({ id, avatar, name, tweets, followers, following }) {
   const [isFollowing, setIsFollowing] = useState(() =>
     JSON.parse(localStorage.getItem(`${id}`) || following)
   );
@@ -31,34 +23,38 @@ function TweetListItem({
 
   const follows = newFollowers > 0 ? newFollowers : "no";
 
-  let splitTweets;
+  let sliceTweets;
   if (tweets === 0) {
-    splitTweets = "no";
+    sliceTweets = "no";
   }
   if (tweets > 0) {
-    splitTweets = tweets;
+    sliceTweets = tweets;
   }
   if (tweets > 10000) {
     const firstPart = tweets.toString().slice(0, 2);
     const secondPart = tweets.toString().slice(2, 5);
-    splitTweets = firstPart + "," + secondPart;
+    sliceTweets = firstPart + "," + secondPart;
   }
 
   if (tweets > 100000) {
     const firstPart = tweets.toString().slice(0, 3);
     const secondPart = tweets.toString().slice(3, 6);
-    splitTweets = firstPart + "," + secondPart;
+    sliceTweets = firstPart + "," + secondPart;
   }
+
+  const setLocalStorage = (id, bool) => {
+    window.localStorage.setItem(`${id}`, bool);
+  };
 
   const onFollowBtnClick = () => {
     if (!isFollowing) {
       setIsFollowing(true);
       setNewFollowers((prevFollowers) => prevFollowers + 1);
-      window.localStorage.setItem(`${id}`, true);
+      setLocalStorage(id, true);
     } else {
       setIsFollowing(false);
       setNewFollowers((prevFollowers) => prevFollowers - 1);
-      window.localStorage.setItem(`${id}`, false);
+      setLocalStorage(id, false);
     }
   };
 
@@ -70,7 +66,7 @@ function TweetListItem({
       <AvatarCircle src={circle} alt="circle" />
       <AvatarImage src={avatar} width="30px" alt={name} />
       <TextWrapper>
-        <TextParagraph>{splitTweets} tweets</TextParagraph>
+        <TextParagraph>{sliceTweets} tweets</TextParagraph>
         <TextParagraph>{follows} followers</TextParagraph>
       </TextWrapper>
       <FollowBtn

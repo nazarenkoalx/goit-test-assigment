@@ -50,7 +50,7 @@ function Tweets() {
       {userArr.length > 0 && (
         <>
           <StyledTitle>Tweet list</StyledTitle>
-          <TweetList usersInfo={userArr} setUserArr={setUserArr} />
+          <TweetList usersInfo={userArr} />
         </>
       )}
       {userArr.length > 0 && totalTweets > tweetsPerPage && (
