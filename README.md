@@ -72,87 +72,87 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 user arr
 [
 {
-"avatar": "frodo.png",
+"avatar": "https://www.meme-arsenal.com/memes/d9c674d32d710a96a682a8d063c3fb6f.jpg",
 "name": "Frodo Baggins",
-"tweets": 100500,
-"followers": 777,
+"tweets": 3948733,
+"followers": 322,
 "id": "1"
 },
 {
-"avatar": "aragorn.png",
+"avatar": "https://citaty.info/files/styles/poster/public/portraits/971052190_0_13_1015_589_600x0_80_0_0_4e7ac689a9f1a10aae72d0c8e351406f.jpg?itok=ILDzRHvC",
 "name": "Aragorn The King",
-"tweets": 100500,
-"followers": 777,
+"tweets": 837324,
+"followers": 93854,
 "id": "2"
 },
 {
-"avatar": "gandalf.png",
+"avatar": "https://i.kym-cdn.com/entries/icons/original/000/042/690/Screen_Shot_2022-11-16_at_2.24.03_PM.jpg",
 "name": "Gendalf The Grey",
-"tweets": 100500,
-"followers": 777,
+"tweets": 9284982,
+"followers": 234,
 "id": "3"
 },
 {
-"avatar": "gollum.png",
+"avatar": "https://imgflip.com/s/meme/Gollum.jpg",
 "name": "Gollum",
-"tweets": 100500,
-"followers": 777,
+"tweets": 9854984,
+"followers": 344,
 "id": "4"
 },
 {
-"avatar": "legolas.png",
+"avatar": "https://citaty.info/files/styles/poster/public/characters/51306.jpg?itok=suCYBpQM",
 "name": "Prince Legolas",
-"tweets": 100500,
-"followers": 777,
+"tweets": 398398,
+"followers": 23,
 "id": "5"
 },
 {
-"avatar": "boromir.png",
+"avatar": "https://www.meme-arsenal.com/memes/332ec9304ec7b101ecadfecd3713eef8.jpg",
 "name": "Boromir",
-"tweets": 100500,
-"followers": 777,
+"tweets": 4945,
+"followers": 7747,
 "id": "6"
 },
 {
-"avatar": "sam.png",
+"avatar": "https://pm1.narvii.com/5918/2d6a8fd455cb7af2f6f6655163bc9c7a57198f98_00.jpg",
 "name": "Samwise Gamgy",
-"tweets": 100500,
-"followers": 777,
+"tweets": 894383,
+"followers": 131,
 "id": "7"
 },
 {
-"avatar": "pippin.png",
+"avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbvSVpKQNQNCGNUH3KHoPmYmfbJ1-n0kRgfw&usqp=CAU",
 "name": "Pippin Took",
-"tweets": 100500,
-"followers": 777,
+"tweets": 34556,
+"followers": 1332,
 "id": "8"
 },
 {
-"avatar": "mary.png",
+"avatar": "https://cdn.quotesgram.com/img/71/67/52509606-tumblr_mfxou0FMZG1r5hiydo3_250.gif",
 "name": "Mary Brandyback",
-"tweets": 100500,
-"followers": 777,
+"tweets": 1032,
+"followers": 913,
 "id": "9"
 },
 {
-"avatar": "gimli.png",
+"avatar": "https://citaty.info/files/styles/poster/public/portraits/gimli.jpg?itok=y0x7VyJ5",
 "name": "GIMLI DWARF",
-"tweets": 100500,
-"followers": 777,
+"tweets": 394889,
+"followers": 845,
 "id": "10"
 },
 {
-"avatar": "bilbo.png",
+"avatar": "https://www.meme-arsenal.com/memes/59612c01e6b5d3e624a57368a30bccb0.jpg",
 "name": "Bilbo Baggince",
-"tweets": 100500,
-"followers": 777,
+"tweets": 293921,
+"followers": 348,
 "id": "11"
 },
 {
-"avatar": "arven.png",
+"avatar": "https://citaty.info/files/styles/poster/public/portraits/arven-undomiel.jpg?itok=EpnmRT56",
 "name": "Arwen Undómiel",
-"tweets": 100500,
-"followers": 777,
+"tweets": 893584,
+"followers": 1123,
 "id": "12"
 }
 ]
