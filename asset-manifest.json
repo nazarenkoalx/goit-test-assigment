@@ -1,10 +1,10 @@
 {
   "files": {
     "main.css": "/goit-test-assigment/static/css/main.073c9b0a.css",
-    "main.js": "/goit-test-assigment/static/js/main.fb9a0bed.js",
+    "main.js": "/goit-test-assigment/static/js/main.817e3514.js",
     "static/js/373.a880d5e2.chunk.js": "/goit-test-assigment/static/js/373.a880d5e2.chunk.js",
     "static/js/415.0b1446c6.chunk.js": "/goit-test-assigment/static/js/415.0b1446c6.chunk.js",
-    "static/js/133.003a1763.chunk.js": "/goit-test-assigment/static/js/133.003a1763.chunk.js",
+    "static/js/133.e79d13ba.chunk.js": "/goit-test-assigment/static/js/133.e79d13ba.chunk.js",
     "static/js/787.4f759f51.chunk.js": "/goit-test-assigment/static/js/787.4f759f51.chunk.js",
     "static/js/384.a681a57b.chunk.js": "/goit-test-assigment/static/js/384.a681a57b.chunk.js",
     "static/media/backgroundTweet.png": "/goit-test-assigment/static/media/backgroundTweet.032662a2a907475127d7.png",
@@ -12,15 +12,15 @@
     "static/media/goitLogo.svg": "/goit-test-assigment/static/media/goitLogo.ed8d2d6f7ea349921680afb489ab80b8.svg",
     "index.html": "/goit-test-assigment/index.html",
     "main.073c9b0a.css.map": "/goit-test-assigment/static/css/main.073c9b0a.css.map",
-    "main.fb9a0bed.js.map": "/goit-test-assigment/static/js/main.fb9a0bed.js.map",
+    "main.817e3514.js.map": "/goit-test-assigment/static/js/main.817e3514.js.map",
     "373.a880d5e2.chunk.js.map": "/goit-test-assigment/static/js/373.a880d5e2.chunk.js.map",
     "415.0b1446c6.chunk.js.map": "/goit-test-assigment/static/js/415.0b1446c6.chunk.js.map",
-    "133.003a1763.chunk.js.map": "/goit-test-assigment/static/js/133.003a1763.chunk.js.map",
+    "133.e79d13ba.chunk.js.map": "/goit-test-assigment/static/js/133.e79d13ba.chunk.js.map",
     "787.4f759f51.chunk.js.map": "/goit-test-assigment/static/js/787.4f759f51.chunk.js.map",
     "384.a681a57b.chunk.js.map": "/goit-test-assigment/static/js/384.a681a57b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.fb9a0bed.js"
+    "static/js/main.817e3514.js"
   ]
 }
