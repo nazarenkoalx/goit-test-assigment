@@ -20,7 +20,6 @@ export const StyledTweetListItem = styled.li`
 
 export const TopImage = styled.img`
   display: block;
-  /* margin: 0 auto; */
 `;
 export const TopLogo = styled.img`
   position: absolute;

@@ -9,10 +9,7 @@ import {
 import { Loader } from "../components/Loading/Loading";
 
 function Tweets() {
-  const [userArr, setUserArr] = useState(
-    []
-    // () => JSON.parse(window.localStorage.getItem("userArr")) ?? []
-  );
+  const [userArr, setUserArr] = useState([]);
   const [totalTweets, setTotalTweets] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
