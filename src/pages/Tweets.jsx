@@ -9,6 +9,7 @@ function Tweets() {
   const [loading, setLoading] = useState(false);
   const [userArr, setUserArr] = useState([]);
   const [tweetsPerPage, setTweetsPerPage] = useState(3);
+  // const [tweetsOnPage, setTweetsOnPage] = useState(0);
 
   useEffect(() => {
     setUserArr([]);
@@ -20,6 +21,7 @@ function Tweets() {
           return alert("There are no tweets(");
         }
 
+        // setUserArr((prevUserInfo) => [...prevUserInfo, ...userInfo]);
         setUserArr(userInfo);
       })
       .catch((error) => setError(error))
