@@ -1,7 +1,7 @@
 import TweetListItem from "../TweetListItem/TweetListItem";
 import { StyledTweetList } from "./TweetList.styled";
 
-function TweetList({ usersInfo }) {
+function TweetList({ usersInfo, setUserArr }) {
   return (
     <StyledTweetList>
       {usersInfo.map((userInfo) => {
@@ -15,6 +15,7 @@ function TweetList({ usersInfo }) {
             tweets={tweets}
             followers={followers}
             following={following}
+            setUserArr={setUserArr}
           />
         );
       })}

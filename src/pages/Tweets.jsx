@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getUserInfo } from "../services/serviceAPI";
 import TweetList from "../components/TweetList/TweetList";
 import {
+  Container,
   LoadMoreBtn,
   StyledTitle,
 } from "../components/TweetList/TweetList.styled";
@@ -43,19 +44,19 @@ function Tweets() {
   };
 
   return (
-    <main>
+    <Container>
       {loading && <Loader />}
       {error && <div> smth went wrong </div>}
       {userArr.length > 0 && (
         <>
           <StyledTitle>Tweet list</StyledTitle>
-          <TweetList usersInfo={userArr} />
+          <TweetList usersInfo={userArr} setUserArr={setUserArr} />
         </>
       )}
       {userArr.length > 0 && totalTweets > tweetsPerPage && (
         <LoadMoreBtn onClick={onLoadMoreClick}>Load More</LoadMoreBtn>
       )}
-    </main>
+    </Container>
   );
 }
 

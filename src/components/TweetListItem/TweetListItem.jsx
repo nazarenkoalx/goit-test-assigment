@@ -15,8 +15,18 @@ import backgroundimg from "../../images/backgroundTweet.png";
 import line from "../../images/line.png";
 import circle from "../../images/ellipse@2x.png";
 
-function TweetListItem({ id, avatar, name, tweets, followers, following }) {
-  const [isFollowing, setIsFollowing] = useState(following);
+function TweetListItem({
+  id,
+  avatar,
+  name,
+  tweets,
+  followers,
+  following,
+  setUserArr,
+}) {
+  const [isFollowing, setIsFollowing] = useState(() =>
+    JSON.parse(localStorage.getItem(`${id}`) || following)
+  );
   const [newFollowers, setNewFollowers] = useState(followers);
 
   const follows = newFollowers > 0 ? newFollowers : "no";
@@ -44,9 +54,11 @@ function TweetListItem({ id, avatar, name, tweets, followers, following }) {
     if (!isFollowing) {
       setIsFollowing(true);
       setNewFollowers((prevFollowers) => prevFollowers + 1);
+      window.localStorage.setItem(`${id}`, true);
     } else {
       setIsFollowing(false);
       setNewFollowers((prevFollowers) => prevFollowers - 1);
+      window.localStorage.setItem(`${id}`, false);
     }
   };
 

@@ -1,5 +1,10 @@
 import styled from "@emotion/styled";
 
+export const Container = styled.main`
+  padding-top: 48px;
+  padding-bottom: 48px;
+`;
+
 export const StyledTitle = styled.h1`
   text-align: center;
   margin-bottom: 20px;
