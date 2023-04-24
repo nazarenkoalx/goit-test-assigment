@@ -18,12 +18,3 @@ export async function getUserInfo(tweetsPerPage, tweetsOnPage) {
   }
 }
 
-// export async function updateUsersData(id, data) {
-//   try {
-//     const response = await axios.put(`/user/${id}`, data);
-//     const userInfo = response.data;
-//     return userInfo;
-//   } catch (error) {
-//     throw new Error(error);
-//   }
-// }
