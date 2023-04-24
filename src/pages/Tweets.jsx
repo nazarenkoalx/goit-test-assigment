@@ -1,35 +1,45 @@
 import { useEffect, useState } from "react";
 import { getUserInfo } from "../services/serviceAPI";
 import TweetList from "../components/TweetList/TweetList";
-import { LoadMoreBtn } from "../components/TweetList/TweetList.styled";
+import {
+  LoadMoreBtn,
+  StyledTitle,
+} from "../components/TweetList/TweetList.styled";
 import { Loader } from "../components/Loading/Loading";
 
 function Tweets() {
-  const [error, setError] = useState("");
+  const [userArr, setUserArr] = useState(
+    []
+    // () => JSON.parse(window.localStorage.getItem("userArr")) ?? []
+  );
+  const [totalTweets, setTotalTweets] = useState(null);
+  const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [userArr, setUserArr] = useState([]);
   const [tweetsPerPage, setTweetsPerPage] = useState(3);
-  // const [tweetsOnPage, setTweetsOnPage] = useState(0);
+  const [tweetsOnPage, setTweetsOnPage] = useState(0);
 
   useEffect(() => {
-    setUserArr([]);
-    setError("");
+    setError(null);
     setLoading(true);
-    getUserInfo(tweetsPerPage)
-      .then((userInfo) => {
+    getUserInfo(tweetsPerPage, tweetsOnPage)
+      .then(({ userInfo, totalTweets }) => {
         if (userInfo.length === 0) {
           return alert("There are no tweets(");
         }
-
-        // setUserArr((prevUserInfo) => [...prevUserInfo, ...userInfo]);
-        setUserArr(userInfo);
+        setTotalTweets(totalTweets);
+        setUserArr((prevUserInfo) => [...prevUserInfo, ...userInfo]);
       })
       .catch((error) => setError(error))
       .finally(() => setLoading(false));
-  }, [tweetsPerPage]);
+  }, [tweetsOnPage, tweetsPerPage]);
+
+  useEffect(() => {
+    window.localStorage.setItem("userArr", JSON.stringify(userArr));
+  }, [userArr]);
 
   const onLoadMoreClick = () => {
     setTweetsPerPage((prevTweetsPerPage) => prevTweetsPerPage + 3);
+    setTweetsOnPage((prevTweetsOnPage) => prevTweetsOnPage + 3);
   };
 
   return (
@@ -38,11 +48,11 @@ function Tweets() {
       {error && <div> smth went wrong </div>}
       {userArr.length > 0 && (
         <>
-          <h2>Tweet list</h2>
+          <StyledTitle>Tweet list</StyledTitle>
           <TweetList usersInfo={userArr} />
         </>
       )}
-      {userArr.length > 0 && userArr.length === tweetsPerPage && (
+      {userArr.length > 0 && totalTweets > tweetsPerPage && (
         <LoadMoreBtn onClick={onLoadMoreClick}>Load More</LoadMoreBtn>
       )}
     </main>

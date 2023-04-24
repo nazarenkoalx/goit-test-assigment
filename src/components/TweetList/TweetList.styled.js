@@ -1,5 +1,10 @@
 import styled from "@emotion/styled";
 
+export const StyledTitle = styled.h1`
+  text-align: center;
+  margin-bottom: 20px;
+`;
+
 export const StyledTweetList = styled.ul`
   display: flex;
   flex-wrap: wrap;

@@ -14,18 +14,9 @@ import goitLogo from "../../images/goitLogo.svg";
 import backgroundimg from "../../images/backgroundTweet.png";
 import line from "../../images/line.png";
 import circle from "../../images/ellipse@2x.png";
-// import { css } from "@emotion/react";
 
-function TweetListItem({
-  id,
-  avatar,
-  name,
-  tweets,
-  followers,
-  setUserFollow,
-  localFollowing,
-}) {
-  const [isFollowing, setIsFollowing] = useState(false);
+function TweetListItem({ id, avatar, name, tweets, followers, following }) {
+  const [isFollowing, setIsFollowing] = useState(following);
   const [newFollowers, setNewFollowers] = useState(followers);
 
   const follows = newFollowers > 0 ? newFollowers : "no";
@@ -57,7 +48,6 @@ function TweetListItem({
       setIsFollowing(false);
       setNewFollowers((prevFollowers) => prevFollowers - 1);
     }
-    localFollowing(id, newFollowers);
   };
 
   return (
