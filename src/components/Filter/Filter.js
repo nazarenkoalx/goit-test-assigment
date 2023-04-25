@@ -5,7 +5,6 @@ import { FilterForm, FilterInput } from "./Filter.styled";
 export const Filter = ({ setFilter, filterVal }) => {
   const { register } = useForm({ defaultValues: { filter_option: filterVal } });
 
-  // const filterOptionsArr = ["all", "following", "follow"];
   return (
     <FilterForm
       onChange={(evt) => {

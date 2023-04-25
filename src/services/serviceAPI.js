@@ -21,7 +21,6 @@ export async function getUserInfo(tweetsPerPage, tweetsOnPage) {
 export async function putUserInfo(id, updatedData) {
   try {
     const { data } = await axios.put(`/users/${id}`, updatedData);
-    console.log(data);
     return data;
   } catch (error) {
     throw new Error(error);
