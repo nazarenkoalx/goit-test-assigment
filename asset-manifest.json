@@ -1,10 +1,10 @@
 {
   "files": {
     "main.css": "/goit-test-assigment/static/css/main.073c9b0a.css",
-    "main.js": "/goit-test-assigment/static/js/main.bd6d249c.js",
+    "main.js": "/goit-test-assigment/static/js/main.58fc2f5e.js",
     "static/js/589.9c351036.chunk.js": "/goit-test-assigment/static/js/589.9c351036.chunk.js",
     "static/js/172.b53d8291.chunk.js": "/goit-test-assigment/static/js/172.b53d8291.chunk.js",
-    "static/js/581.34549463.chunk.js": "/goit-test-assigment/static/js/581.34549463.chunk.js",
+    "static/js/581.3f1e57c8.chunk.js": "/goit-test-assigment/static/js/581.3f1e57c8.chunk.js",
     "static/js/787.4f759f51.chunk.js": "/goit-test-assigment/static/js/787.4f759f51.chunk.js",
     "static/js/450.341eb1d2.chunk.js": "/goit-test-assigment/static/js/450.341eb1d2.chunk.js",
     "static/js/135.043346e6.chunk.js": "/goit-test-assigment/static/js/135.043346e6.chunk.js",
@@ -14,16 +14,16 @@
     "static/media/goitLogo.svg": "/goit-test-assigment/static/media/goitLogo.ed8d2d6f7ea349921680afb489ab80b8.svg",
     "index.html": "/goit-test-assigment/index.html",
     "main.073c9b0a.css.map": "/goit-test-assigment/static/css/main.073c9b0a.css.map",
-    "main.bd6d249c.js.map": "/goit-test-assigment/static/js/main.bd6d249c.js.map",
+    "main.58fc2f5e.js.map": "/goit-test-assigment/static/js/main.58fc2f5e.js.map",
     "589.9c351036.chunk.js.map": "/goit-test-assigment/static/js/589.9c351036.chunk.js.map",
     "172.b53d8291.chunk.js.map": "/goit-test-assigment/static/js/172.b53d8291.chunk.js.map",
-    "581.34549463.chunk.js.map": "/goit-test-assigment/static/js/581.34549463.chunk.js.map",
+    "581.3f1e57c8.chunk.js.map": "/goit-test-assigment/static/js/581.3f1e57c8.chunk.js.map",
     "787.4f759f51.chunk.js.map": "/goit-test-assigment/static/js/787.4f759f51.chunk.js.map",
     "450.341eb1d2.chunk.js.map": "/goit-test-assigment/static/js/450.341eb1d2.chunk.js.map",
     "135.043346e6.chunk.js.map": "/goit-test-assigment/static/js/135.043346e6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.bd6d249c.js"
+    "static/js/main.58fc2f5e.js"
   ]
 }
