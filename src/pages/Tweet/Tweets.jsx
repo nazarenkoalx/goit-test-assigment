@@ -1,14 +1,17 @@
 import { useEffect, useState } from "react";
-import { getUserInfo } from "../services/serviceAPI";
-import TweetList from "../components/TweetList/TweetList";
+import { getUserInfo } from "../../services/serviceAPI";
+import setVisibleTweets from "../../services/setVisibleTweets";
+import TweetList from "../../components/TweetList/TweetList";
 import {
   Container,
   LoadMoreBtn,
   StyledTitle,
-} from "../components/TweetList/TweetList.styled";
-import { Loader } from "../components/Loading/Loading";
+} from "../../components/TweetList/TweetList.styled";
+import { Loader } from "../../components/Loading/Loading";
 import { useLocation } from "react-router-dom";
-import { GoBackBtn } from "../components/GoBackBtn/GoBackBtn";
+import { GoBackBtn } from "../../components/GoBackBtn/GoBackBtn";
+import { Filter } from "../../components/Filter/Filter";
+import { ErrorWrapper } from "./Tweets.styled";
 
 function Tweets() {
   const [userArr, setUserArr] = useState([]);
@@ -18,8 +21,10 @@ function Tweets() {
   const [tweetsPerPage, setTweetsPerPage] = useState(3);
   const [tweetsOnPage, setTweetsOnPage] = useState(0);
   const location = useLocation();
+  const [filter, setFilter] = useState("");
 
   const goBackPath = location.state?.from ?? { pathname: "/" };
+
   useEffect(() => {
     setError(null);
     setLoading(true);
@@ -44,18 +49,28 @@ function Tweets() {
     setTweetsOnPage((prevTweetsOnPage) => prevTweetsOnPage + 3);
   };
 
+  const visibleTweets = setVisibleTweets(userArr, filter);
+
   return (
     <Container>
       <GoBackBtn path={goBackPath} />
       {loading && <Loader />}
+      {visibleTweets.length === 0 && (
+        <ErrorWrapper>
+          <p>Unfortunately there is nothing to show with such filters</p>
+          <p>Please, try another filter option</p>
+        </ErrorWrapper>
+      )}
       {error && <div> smth went wrong </div>}
-      {userArr.length > 0 && (
+      <Filter setFilter={setFilter} filterVal={filter} />
+      {visibleTweets.length > 0 && (
         <>
           <StyledTitle>Tweet list</StyledTitle>
-          <TweetList usersInfo={userArr} />
+
+          <TweetList usersInfo={visibleTweets} />
         </>
       )}
-      {userArr.length > 0 && totalTweets > tweetsPerPage && (
+      {totalTweets > tweetsPerPage && visibleTweets.length >= tweetsPerPage && (
         <LoadMoreBtn onClick={onLoadMoreClick}>Load More</LoadMoreBtn>
       )}
     </Container>

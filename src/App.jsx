@@ -12,7 +12,7 @@ const SharedLayout = lazy(() =>
   import("./components/SharedLayout/SharedLayout")
 );
 const Home = lazy(() => import("./pages/Home/Home"));
-const Tweets = lazy(() => import("./pages/Tweets"));
+const Tweets = lazy(() => import("./pages/Tweet/Tweets"));
 
 function App() {
   return (
