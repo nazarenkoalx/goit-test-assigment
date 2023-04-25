@@ -17,7 +17,7 @@ const Tweets = lazy(() => import("./pages/Tweets"));
 function App() {
   return (
     <Suspense fallback={<Loader />}>
-      <Router basename="/goit-test-assigment">
+      <Router>
         <Routes>
           <Route path="/" element={<SharedLayout />}>
             <Route index element={<Home />} />
