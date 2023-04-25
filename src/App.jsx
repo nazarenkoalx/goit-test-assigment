@@ -11,7 +11,7 @@ import { Loader } from "./components/Loading/Loading";
 const SharedLayout = lazy(() =>
   import("./components/SharedLayout/SharedLayout")
 );
-const Home = lazy(() => import("./pages/Home"));
+const Home = lazy(() => import("./pages/Home/Home"));
 const Tweets = lazy(() => import("./pages/Tweets"));
 
 function App() {

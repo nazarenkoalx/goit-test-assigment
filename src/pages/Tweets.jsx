@@ -20,7 +20,6 @@ function Tweets() {
   const location = useLocation();
 
   const goBackPath = location.state?.from ?? { pathname: "/" };
-  console.log(goBackPath);
   useEffect(() => {
     setError(null);
     setLoading(true);
