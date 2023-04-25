@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import { nanoid } from "nanoid";
+import PropTypes from "prop-types";
 import { FilterForm, FilterInput } from "./Filter.styled";
 
 export const Filter = ({ setFilter, filterVal }) => {
@@ -30,4 +31,9 @@ export const Filter = ({ setFilter, filterVal }) => {
       </FilterInput>
     </FilterForm>
   );
+};
+
+Filter.propTypes = {
+  setFilter: PropTypes.func.isRequired,
+  filterVal: PropTypes.string.isRequired,
 };

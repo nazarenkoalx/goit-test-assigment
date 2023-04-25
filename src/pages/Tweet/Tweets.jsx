@@ -58,6 +58,7 @@ function Tweets() {
       {visibleTweets.length === 0 && (
         <ErrorWrapper>
           <p>Unfortunately there is nothing to show with such filters</p>
+          <br />
           <p>Please, try another filter option</p>
         </ErrorWrapper>
       )}
@@ -66,7 +67,6 @@ function Tweets() {
       {visibleTweets.length > 0 && (
         <>
           <StyledTitle>Tweet list</StyledTitle>
-
           <TweetList usersInfo={visibleTweets} />
         </>
       )}

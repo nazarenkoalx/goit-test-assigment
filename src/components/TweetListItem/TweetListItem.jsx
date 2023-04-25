@@ -15,6 +15,7 @@ import backgroundimg from "../../images/backgroundTweet.png";
 import line from "../../images/line.png";
 import circle from "../../images/ellipse@2x.png";
 import { putUserInfo } from "../../services/serviceAPI";
+import PropTypes from "prop-types";
 
 function TweetListItem({ id, avatar, name, tweets, followers, following }) {
   const [isFollowing, setIsFollowing] = useState(() =>
@@ -82,5 +83,14 @@ function TweetListItem({ id, avatar, name, tweets, followers, following }) {
     </StyledTweetListItem>
   );
 }
+
+TweetListItem.propTypes = {
+  id: PropTypes.string.isRequired,
+  avatar: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  tweets: PropTypes.number.isRequired,
+  followers: PropTypes.number.isRequired,
+  following: PropTypes.bool.isRequired,
+};
 
 export default TweetListItem;

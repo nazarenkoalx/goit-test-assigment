@@ -1,5 +1,6 @@
 import TweetListItem from "../TweetListItem/TweetListItem";
 import { StyledTweetList } from "./TweetList.styled";
+import PropTypes from "prop-types";
 
 function TweetList({ usersInfo }) {
   return (
@@ -21,5 +22,18 @@ function TweetList({ usersInfo }) {
     </StyledTweetList>
   );
 }
+
+TweetList.propTypes = {
+  userInfo: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      avatar: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      tweets: PropTypes.number.isRequired,
+      followers: PropTypes.number.isRequired,
+      following: PropTypes.bool.isRequired,
+    })
+  ),
+};
 
 export default TweetList;
