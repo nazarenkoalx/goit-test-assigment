@@ -7,6 +7,8 @@ import {
   StyledTitle,
 } from "../components/TweetList/TweetList.styled";
 import { Loader } from "../components/Loading/Loading";
+import { useLocation } from "react-router-dom";
+import { GoBackBtn } from "../components/GoBackBtn/GoBackBtn";
 
 function Tweets() {
   const [userArr, setUserArr] = useState([]);
@@ -15,7 +17,10 @@ function Tweets() {
   const [loading, setLoading] = useState(false);
   const [tweetsPerPage, setTweetsPerPage] = useState(3);
   const [tweetsOnPage, setTweetsOnPage] = useState(0);
+  const location = useLocation();
 
+  const goBackPath = location.state?.from ?? { pathname: "/" };
+  console.log(goBackPath);
   useEffect(() => {
     setError(null);
     setLoading(true);
@@ -42,6 +47,7 @@ function Tweets() {
 
   return (
     <Container>
+      <GoBackBtn path={goBackPath} />
       {loading && <Loader />}
       {error && <div> smth went wrong </div>}
       {userArr.length > 0 && (

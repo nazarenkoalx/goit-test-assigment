@@ -11,6 +11,7 @@ export const GlobalStyles = css`
     background: white;
     min-height: 100vh;
     font-style: normal;
+    background-color: #c9e3ff;
   }
   h1,
   h2,
